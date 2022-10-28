@@ -27,10 +27,10 @@ public:
     virtual void ImprimirDocumento();
     //bool operator == (const Document&);
 };
-bool operator==(const Document& doc1, const Document& doc2) {
-    return(doc1 == doc2);
-
-}
+//bool operator==(const Document& doc1, const Document& doc2) {
+//    return(doc1 == doc2);
+//
+//}
 
 void Document::ImprimirDocumento() {
     cout << "Nombre: " << nombre << endl;
@@ -40,9 +40,7 @@ void Document::ImprimirDocumento() {
     cout << "Firma: " << firma << endl;
 
 }
-void operator <<(ostream& os, Document& doc1) {
-    doc1.ImprimirDocumento();
-}
+
 
 
 Document::Document(string _nombre, string _curp, string _fechaNacimiento, string _fechaVigencia, string _firma, char _sexo) {

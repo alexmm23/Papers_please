@@ -6,25 +6,40 @@ using namespace std;
 
 class Person {
 private:
+    int index = 0;
     string name;
     int  edad = 0;
     char sexo = ' ';
-    bool status = true;//la razon de por qué no paso el usuario, en caso de que aplique 
+    bool status = true;
+    string message = "";
 
 public:
     Person(string, int, char, bool);
     Person(bool, Document*, Document*);
     bool getStatus() { return status; };
+    void setIndex(int index) { this->index = index; };
+    void setMessage(string message) { this->message = message; };
+    string getMessage() { return message; }
+    int getIndex() { return index; };
     list<Document*> personal_documents;
     list<Document*>::iterator it = personal_documents.begin();
-    //void setDocuments(Document* passport, Document* id);
-};
 
-Person::Person(string _name, int _age, char _sexo, bool _status) {
-    name = _name;
-    edad = _age;
-    sexo = _sexo;
-    status = _status;
+
+
+};
+void operator <<(ostream& os, Document& doc1) {
+    doc1.ImprimirDocumento();
+}
+void operator <<(ostream& os, Person& person) {
+    for(auto element = person.personal_documents.begin();element != person.personal_documents.end(); ++element)
+    os << **element;
+}
+Person::Person(string name, int age, char sexo, bool status) {
+    this->name = name;
+    this->edad = age;
+    this->sexo = sexo;
+    this->status = status;
+ 
 }
 
 Person::Person(bool _status, Document* passport, Document* id) {
@@ -33,10 +48,5 @@ Person::Person(bool _status, Document* passport, Document* id) {
     personal_documents.push_back(id);
 
 }
-//
-//void Person::setDocuments(Document* passport, Document* id) {
-//    personal_documents.push_back(passport);
-//    personal_documents.push_back(id);
-//
-//}
+
 

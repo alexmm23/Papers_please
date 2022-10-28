@@ -6,6 +6,7 @@ using namespace std;
 class Player {
 private:
 	int score = 0;
+	string family[5] = { "PADRE", "MADRE", "HERMANO MENOR", "ABUELA", "ABUELO" };
 	
 
 public:
@@ -13,11 +14,11 @@ public:
 		score = _score;
 	}
 	Player& operator ++() {
-		score += 10;
+		score += 100;
 		return *this;
 	}
 	Player& operator --() {
-		score -= 5;
+		score -= 50;
 		return *this;
 	}
 	int getScore() { return score; };
@@ -29,8 +30,9 @@ public:
 //sobrecargar ++ para sumar 1 punto en caso de acierto
 //sobrecargar -- para restar 1 punto en caso de error
 
-class Game {
-public:
-	void run();
-
-};
+//
+//class Game {
+//public:
+//	void run();
+//
+//};
