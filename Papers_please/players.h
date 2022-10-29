@@ -23,6 +23,7 @@ public:
 	}
 	int getScore() { return score; };
 	void setScore(int _score) { score = _score; };
+	string getFamilymember() { return family[rand()]; };
 
 
 };

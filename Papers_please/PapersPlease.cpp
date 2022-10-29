@@ -43,9 +43,6 @@ int main()
     listPeople.push_back(Fifthperson);
 
 
-
-
-    system("pause");
     while (true) {
 
         if (_seJuega != '1') { break; }
@@ -73,7 +70,6 @@ int main()
                 cout << "Presiona 1 para comenzar a jugar..." << endl;
                 cout << "Presiona 2 para salir..." << endl;
                 _seJuega = _getch();
-                //cin >> _seJuega;
 
                 if (_seJuega != '1') {
                     break;
@@ -94,7 +90,7 @@ int main()
                     cout << "Solo puedes admitir a aquellos que tengan sus documentos en regla" << endl;
                     cout << "Cualquier discrepancia debera ser sancionada" << endl;
                     cout << "---------------Hoy solo pueden pasar Mexicanos-----------------" << endl;
-                    cout << endl;
+                    cout << endl<<endl;
 
                     for (auto yiterator = p1->personal_documents.begin(); yiterator != p1->personal_documents.end(); ++yiterator)
                     {
@@ -124,12 +120,13 @@ int main()
 
                     cout << "Tienes cuentas pendientes que pagar y nos debes..." << endl;
                     cout << "Mientras tanto, tenemos a un miembro de tu familia como garantia" << endl;
+                    //cout << player1.getFamilymember() << endl;
                     cout << "Este es tu saldo" << endl;
                     cout << player1.getScore() << endl;
 
                 }
                 else {
-                    cout << "Hoy ganaste..." << endl;
+                    cout << "Haz sobrevivido al dia de hoy..." << endl;
                     cout << player1.getScore() << endl;
 
                 }
